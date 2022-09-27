@@ -22,9 +22,8 @@ MaxPage = int(Number_Pages[-1].text)
 #-----------------------------------------------------------------------
 
 # Проходимся по всем страницам (так как на одной страницу только 100 вакансий)
-#Number_Pages = 1
+count = 0
 for i in range(0, MaxPage):
-    count = 0
     if i == 0:
         driver.get('https://hh.ru/search/vacancy?no_magic=true&L_save_area=true&text=python+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA&search_field=name&area=113&salary=&currency_code=RUR&experience=doesNotMatter&order_by=relevance&search_period=0&items_on_page=100')
         soup = BeautifulSoup(driver.page_source, 'lxml')
@@ -64,7 +63,7 @@ for i in range(0, MaxPage):
 with open("data.json", "w") as file:
     json.dump(data, file)
 
-# Проверить сколько всего файлов сохранили в документ json
+# Проверить сколько всего файлов храним в документе json
 print(count)
 
 # Закрываем браузер
