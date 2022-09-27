@@ -63,7 +63,7 @@ for i in range(0, MaxPage):
 with open("data.json", "w") as file:
     json.dump(data, file)
 
-# Проверить сколько всего файлов храним в документе json
+# Проверить сколько всего файлов хранится в документе json
 print(count)
 
 # Закрываем браузер
